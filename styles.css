@@ -1,0 +1,127 @@
+div {
+    box-sizing: border-box;
+}
+
+/*
+Player Selector
+*/
+#playerSelector {
+    width: 70vw;
+    border: black solid 3px;
+    padding: 10px;
+    box-sizing: content-box;
+    /*overflow: auto;*/
+    border-radius: 5px;
+}
+
+#playerSelector.fade {
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
+    margin: 0 auto;
+    transition: opacity 1s, visibility 1s, max-height .25s .75s, margin .25s .75s;
+}
+
+#playerSelector.fade.in {
+    visibility: visible;
+    max-height: 200px;
+    overflow: auto;
+    height: inherit;
+    opacity: 1;
+    
+    margin: 0 auto 20px;
+}
+
+#playerSelector h3 {
+    text-align: center;
+    font-size: 40px;
+    margin: 0 auto 20px;
+}
+
+#playerSelector button {
+    width: 50%;
+    font-size: 40px;
+    float: left;
+    height: 60px;
+    border: none;
+    outline: none;
+    color: white;
+    transition: background-color, .5s;
+}
+
+#xButton {
+    background-color: blue;
+}
+
+#xButton:focus {
+    background-color: darkblue;
+}
+
+#oButton {
+    background-color: red;
+}
+
+#oButton:focus {
+    background-color: darkred;
+}
+
+@media screen and (min-width: 880px) {
+    #playerSelector {
+        width: 600px;
+    }
+}
+
+/*
+Tic Tac Toe Board
+*/
+
+.board {
+    width: 90vw;
+    height: 90vw;
+    box-sizing: content-box;
+    margin: 0 auto;
+}
+
+.row {
+    height: calc(100% / 3);
+}
+
+.cell {
+    width: calc(100% / 3);
+    height: 100%;
+    float: left;
+    font-size: 25vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell.x {
+    color: blue;
+}
+
+.cell.o {
+    color: red;
+}
+
+.row:nth-of-type(2) {
+    border-top: black solid 5px;
+    border-bottom: black solid 5px;
+}
+
+.cell:nth-of-type(2) {
+    border-left: black solid 5px;
+    border-right: black solid 5px;
+}
+
+@media screen and (min-width : 880px) {
+    .board {
+        width: 800px;
+        height: 800px;
+    }
+
+    .cell {
+        font-size: calc(800px / 3 - 0px)
+    }
+}
