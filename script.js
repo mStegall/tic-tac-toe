@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (board[0][2] == board[1][1] && board[1][1] == board[2][0]) {
         if (board[0][2] == playerSymbol) {
           result = 'player'
-        } else if (board[0][0] != undefined) {
+        } else if (board[0][2] != undefined) {
           result = 'computer'
         }
       }
