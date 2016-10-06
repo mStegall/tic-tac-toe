@@ -182,6 +182,13 @@ document.addEventListener('DOMContentLoaded', function () {
           result = 'computer'
         }
       }
+      if (board[0][2] == board[1][1] && board[1][1] == board[2][0]) {
+        if (board[0][2] == playerSymbol) {
+          result = 'player'
+        } else if (board[0][0] != undefined) {
+          result = 'computer'
+        }
+      }
 
       return result;
     }
@@ -195,7 +202,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Check turned board
     winner = subCheck() || winner;
-    winner = diagCheck() || winner;
 
     // Transpose board back
     board = transpose(board);
